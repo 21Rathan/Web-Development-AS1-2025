@@ -1,0 +1,78 @@
+/* Fade-in animation for page elements */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Slide-in animation for content */
+  @keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Pulse animation for interactive elements */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Apply animations to elements */
+  
+  /* Header animation */
+  header {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Main content animation */
+  main {
+    animation: slideIn 0.8s ease-out;
+  }
+  
+  /* Interactive button animation */
+  input[type="submit"] {
+    transition: all 0.3s ease;
+  }
+  input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Navigation links animation */
+  nav a {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--text);
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  /*background animation*/
+  body {
+    background: linear-gradient(270deg, var(--background), var(--background2));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Add animation to the image*/
+  img {
+    transition: transform 0.5s ease;
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
