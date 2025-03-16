@@ -1,4 +1,4 @@
-/* Base styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Layout */
+/* LAYOUT */
 body {
     display: grid;
     grid-template-areas:
@@ -42,7 +42,7 @@ body {
     grid-template-columns: 200px 1fr;
 }
 
-/* Header */
+/* HEADER */
 header {
     background-color: navy;
     color: white;
@@ -66,7 +66,7 @@ h1:hover {
     transform: scale(1.02);
 }
 
-/* Navigation */
+/* NAVIGATION */
 nav {
     background-color: navy;
     grid-area: nav;
@@ -101,7 +101,7 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Main */
+/* MAIN*/
 main {
     background-color: navy;
     grid-area: main;
@@ -114,14 +114,14 @@ main {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Aside */
+/* SIDE BAR */
 aside {
     background-color: navy;
     grid-area: aside;
     padding: 1em;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     background-color: navy;
     color: white;
@@ -130,7 +130,7 @@ footer {
     text-align: center;
 }
 
-/* Interactions */
+
 p:hover {
     color:black;
     transition: color 0.3s ease;
@@ -154,7 +154,7 @@ img:hover {
     transform: scale(1.1);
 }
 
-/* Form styling */
+
 form {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -192,7 +192,7 @@ input[type="submit"]:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Home contact link */
+/*  CONTACT lINK */
 .homeContact {
     margin-top: 1em;
 }
@@ -212,12 +212,12 @@ input[type="submit"]:hover {
     background-color: #3a4356;
 }
 
-/* Navigation show/hide for mobile */
+
 .ShowNav {
     display: none;
 }
 
-/* Animation for mobile navigation */
+
 @keyframes slideDown {
     from { max-height: 0; opacity: 0; }
     to { max-height: 500px; opacity: 1; }
