@@ -1,49 +1,92 @@
-/* Fade-in animation for page elements */
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    font-family: var(--font);
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --background: #252C3A;
+    --background2: #515E66;
+    --text: #FAF9F6;
+    --font: 'Barlow', sans-serif;
+    --font2: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(270deg, var(--background), var(--background2));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Layout */
+body {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "nav aside"
+        "footer footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 200px 1fr;
+}
+
+/* Header */
+header {
+    background-color: navy;
+    color: white;
+    grid-area: header;
+    padding: 1em;
+    animation: fadeIn 1s ease-in-out;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-  }
-  
-  /* Slide-in animation for content */
-  @keyframes slideIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  
-  /* Pulse animation for interactive elements */
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
-  
-  /* Apply animations to elements */
-  
-  /* Header animation */
-  header {
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  /* Main content animation */
-  main {
-    animation: slideIn 0.8s ease-out;
-  }
-  
-  /* Interactive button animation */
-  input[type="submit"] {
-    transition: all 0.3s ease;
-  }
-  input[type="submit"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  
-  /* Navigation links animation */
-  nav a {
+}
+
+h1 {
+    border: 1px solid black;
+    padding: 0.5em;
+    transition: transform 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.02);
+}
+
+/* Navigation */
+nav {
+    background-color: navy;
+    grid-area: nav;
+    padding: 1em;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+nav a {
     position: relative;
     transition: color 0.3s ease;
-  }
-  nav a::after {
+    padding: 0.5em;
+    display: block;
+}
+
+nav a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -52,27 +95,180 @@
     left: 0;
     background-color: var(--text);
     transition: width 0.3s ease;
-  }
-  nav a:hover::after {
+}
+
+nav a:hover::after {
     width: 100%;
-  }
-  
-  /*background animation*/
-  body {
-    background: linear-gradient(270deg, var(--background), var(--background2));
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-  }
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  /* Add animation to the image*/
-  img {
+}
+
+/* Main content */
+main {
+    background-color: navy;
+    grid-area: main;
+    padding: 1em;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Aside */
+aside {
+    background-color: navy;
+    grid-area: aside;
+    padding: 1em;
+}
+
+/* Footer */
+footer {
+    background-color: navy;
+    color: white;
+    grid-area: footer;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Interactive elements */
+p:hover {
+    color: red;
+    transition: color 0.3s ease;
+}
+
+.imageDiv {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
     transition: transform 0.5s ease;
-  }
-  img:hover {
+    display: block;
+}
+
+img:hover {
     transform: scale(1.1);
-  }
+}
+
+/* Form styling */
+form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    row-gap: 0.5em;
+    width: 400px;
+    margin: 1em 0;
+}
+
+input, textarea {
+    padding: 0.5em;
+    margin: 0.2em 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+input::placeholder {
+    color: red;
+}
+
+input[type="submit"] {
+    grid-column: 2;
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 0.7em 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Home contact link */
+.homeContact {
+    margin-top: 1em;
+}
+
+.homeContact a {
+    display: inline-block;
+    background-color: #252C3A;
+    color: white;
+    padding: 0.7em 1em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.homeContact a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #3a4356;
+}
+
+/* Navigation show/hide for mobile */
+.ShowNav {
+    display: none;
+}
+
+/* Animation for mobile navigation */
+@keyframes slideDown {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 500px; opacity: 1; }
+}
+
+/* Pulse animation for interactive elements */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Media queries */
+@media screen and (max-width: 1000px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    
+    #clicked nav {
+        max-height: 500px;
+        animation: slideDown 0.5s ease-out;
+    }
+    
+    .ShowNav {
+        display: block;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .ShowNav.on {
+        background: url('https://media.lordicon.com/icons/wired/lineal/33-menu-dots-vertical.svg') no-repeat center;
+        background-size: contain;
+    }
+    
+    .ShowNav.off {
+        background: url('https://media.lordicon.com/icons/wired/lineal/8-close-x.svg') no-repeat center;
+        background-size: contain;
+    }
+}
