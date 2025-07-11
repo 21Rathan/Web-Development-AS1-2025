@@ -1,68 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rathan's Website</title>
-    <link rel="stylesheet" href="style.css" media="screen">
-    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 1000px)">
-    <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1000px)">
-    <link rel="shortcut icon" href="https://media.lordicon.com/icons/wired/lineal/478-computer-display.svg" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rathan's Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="https://media.lordicon.com/icons/wired/lineal/478-computer-display.svg" type="image/x-icon">
 </head>
-<body id="clicked">
-    <header>
-        <a href="#clicked"   class="ShowNav on"></a>
-        <a href="#"  class="ShowNav off"></a>
-        <h1>Rathan Sathiyamoorthy,
-            My Website and Portfolio.
-        </h1>
-        <header>
-            <a class="showNav" href="#"></a>
-            <h1>Heading</h1>
-            </header>
-    </header>
-    <a href="#clicked">Click me</a>
-<div id="clicked">
-<p>Link has been clicked</p>
-</div>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>Rathan Sathiyamoorthy, My Website and Portfolio.</h1>
 
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
-<!--link tags-->
-    <nav>
-        <ul>
-            
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="video.html">Demo</a></li>
-            <li><a href="report.html">Report</a></li>
-
-        </ul>
+    <!-- Navigation menu -->
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="video.html">Demo</a></li>
+        <li><a href="report.html">Report</a></li>
+      </ul>
     </nav>
-    <main>
-        <a href="contact.html"  class="imageDiv">
-            <img src="https://t3.ftcdn.net/jpg/03/85/31/72/360_F_385317207_Rv1xX5zb6D1TnMdO9rTTRWHSCP1ec68u.jpg"   alt="cartoon laptop">
-        </a>
-        
-        <!--Paragraph-->
-        <div>
-           <p>Lorem ispum.
-            Hello there, my name is Rathan Sathiyamoorthy I am currently studying software engineering at the university of Northampton.</p> 
-            
-        </div>
-        <div class="homeContact">
-            <a href="contact.html">I would love to hear from you!</a>
-        </div>
+  </header>
 
-    </main>
-    <aside>
-        <P>Side Bar</P>
-    </aside>
-    <footer>
-        <p>&copy; Rathan Sathiyamoorthy 2025</p>
-    </footer>
+  <main>
+    <a href="contact.html" class="imageDiv">
+      <img src="https://t3.ftcdn.net/jpg/03/85/31/72/360_F_385317207_Rv1xX5zb6D1TnMdO9rTTRWHSCP1ec68u.jpg" alt="cartoon laptop">
+    </a>
+    <div>
+      <p>
+        Hello there, my name is Rathan Sathiyamoorthy. I am currently studying Software Engineering at the University of Northampton.
+      </p>
+    </div>
+    <div class="homeContact">
+      <a href="contact.html">I would love to hear from you!</a>
+    </div>
+  </main>
+
+  <aside>
+    <p>Side Bar</p>
+  </aside>
+
+  <footer>
+    <p>&copy; Rathan Sathiyamoorthy 2025</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
