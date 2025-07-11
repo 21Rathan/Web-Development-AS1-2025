@@ -244,3 +244,14 @@ input[type="submit"]:hover {
     display: flex;
   }
 }
+
+/* Make all images 600px wide, height auto to keep aspect ratio */
+img {
+  width: 600px;
+  height: auto;
+  display: block;       /* removes inline spacing */
+  margin: 1em auto;     /* centers images horizontally with vertical spacing */
+  max-width: 100%;      /* makes responsive on smaller screens */
+  box-shadow: 0 0 8px rgba(0,0,0,0.2); /* optional styling */
+  border-radius: 4px;   /* optional rounded corners */
+}
